@@ -1,0 +1,21 @@
+#header {
+  min-height: 3em;
+  max-height: 10%;
+  background-color: #00bcd4;
+}
+
+#logo {
+  color: white;
+  font-size: 3em;
+}
+
+#icon {
+  background-color: white;
+  color: #00bcd4;
+  margin-right: 2em;
+  cursor: pointer;
+}
+
+.filler {
+  flex: 1 1 auto;
+}

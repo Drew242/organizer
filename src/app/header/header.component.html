@@ -1,0 +1,22 @@
+<md-toolbar class="container" id="header">
+  <span id="logo" class="filler">Organizer</span>
+  <span>
+    <button md-icon-button id="icon" [md-menu-trigger-for]="menu">
+      <md-icon>more_vert</md-icon>
+      <md-menu #menu="mdMenu">
+        <button md-menu-item>
+          <md-icon>home</md-icon>
+          <span>Home</span>
+        </button>
+        <button md-menu-item>
+          <md-icon>build</md-icon>
+          <span>Build</span>
+        </button>
+        <button md-menu-item>
+          <md-icon>thumb_up</md-icon>
+          <span>Thumbs Up</span>
+        </button>
+      </md-menu>
+    </button>
+  </span>
+</md-toolbar>
