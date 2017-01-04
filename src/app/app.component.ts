@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { HeaderComponent } from './header/header.component';
 
 @Component({
@@ -6,6 +7,4 @@ import { HeaderComponent } from './header/header.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Get Organized';
-}
+export class AppComponent {}
