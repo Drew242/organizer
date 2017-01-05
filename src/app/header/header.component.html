@@ -4,13 +4,13 @@
     <button md-icon-button id="icon" [md-menu-trigger-for]="menu">
       <md-icon>more_vert</md-icon>
       <md-menu #menu="mdMenu">
-        <button md-menu-item>
+        <button md-menu-item routerLink="/">
           <md-icon>home</md-icon>
           <span>Home</span>
         </button>
-        <button md-menu-item>
+        <button md-menu-item routerLink="/task">
           <md-icon>build</md-icon>
-          <span>Build</span>
+          <span>Task Runner</span>
         </button>
         <button md-menu-item>
           <md-icon>thumb_up</md-icon>

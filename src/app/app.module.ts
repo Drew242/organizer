@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from '@angular/material';
 
 import { TaskComponent } from './task/task.component';
+import { TaskService } from './task/task.service';
 import { ErrorComponent } from './error/error.component';
 
 import { appRoutes } from './routes';
@@ -30,7 +31,9 @@ import { LoginComponent } from './login/login.component';
     MaterialModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    TaskService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

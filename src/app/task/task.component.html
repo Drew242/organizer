@@ -1,3 +1,25 @@
-<p>
-  task works!
-</p>
+<div id="task-box">
+  <md-tab-group>
+    <md-tab label="To-Do">
+      <ul class="no-bullet" *ngFor="let task of startingTaskArray; let i = index">
+        <li *ngIf="!task.completed">
+          {{ task.description }}
+          <button md-icon-button (click)="onComplete(i)"><md-icon id="check">check</md-icon></button>
+          <button md-icon-button (click)="onDelete(i)"><md-icon id="delete">remove_circle_outline</md-icon></button>
+        </li>
+      </ul>
+      <md-input-container>
+        <input md-input placeholder="New Task" [(ngModel)]="newTask">
+      </md-input-container>
+      <button md-icon-button (click)="onAdd(newTask)"><md-icon id="check">add</md-icon></button>
+    </md-tab>
+    <md-tab label="Completed">
+      <ul class="no-bullet" *ngFor="let task of startingTaskArray; let i = index">
+        <li *ngIf="task.completed">
+          {{ task.description }}
+          <button md-icon-button (click)="onUndo(i)"><md-icon id="delete">undo</md-icon></button>
+        </li>
+      </ul>
+    </md-tab>
+  </md-tab-group>
+</div>
