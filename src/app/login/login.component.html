@@ -5,13 +5,13 @@
   <hr>
   <br>
   <md-input-container>
-    <input md-input placeholder="username">
+    <input md-input placeholder="username" [(ngModel)]="username">
   </md-input-container>
   <md-input-container>
-    <input md-input placeholder="password" type="password">
+    <input md-input placeholder="password" type="password" [(ngModel)]="password">
   </md-input-container>
   <br>
-  <button md-raised-button color="primary">Login</button>
+  <button md-raised-button color="primary" (click)="onLogin(username, password)">Login</button>
   <br>
   <p>Without logging in, you may explore the site, but your tasks will not persist</p>
   <hr>

@@ -14,6 +14,9 @@ export class TaskComponent implements OnInit {
 
   constructor(private taskService: TaskService) { }
 
+  // this should be a property to dictate which DB gets loaded per the logged in strategy
+  // this.authService.isAuthenticated().first()
+
   ngOnInit() {
     this.startingTaskArray = this.taskService.getTasks();
     this.taskService.taskChanged.subscribe(

@@ -15,6 +15,7 @@ import { ErrorComponent } from './error/error.component';
 
 import { appRoutes } from './routes';
 import { LoginComponent } from './login/login.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LoginComponent } from './login/login.component';
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    TaskService
+    TaskService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
