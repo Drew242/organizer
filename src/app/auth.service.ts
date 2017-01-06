@@ -14,6 +14,7 @@ export class AuthService {
   signinUser(email, password) {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(success => {
+      this.isAuthenticated(); 
       this.router.navigate(['/task']);
     })
     .catch(function(error) {

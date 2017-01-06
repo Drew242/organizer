@@ -21,10 +21,6 @@ export class HeaderComponent implements OnDestroy {
     );
   }
 
-  logAuth() {
-    console.log(this.isAuthenticated);
-  }
-
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
