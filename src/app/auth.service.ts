@@ -9,34 +9,34 @@ declare let firebase: any;
 
 @Injectable()
 export class AuthService {
+  isAuthenticated = new Subject<boolean>();
+
   constructor(private router: Router) {}
 
   signinUser(email, password) {
-    firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(success => {
-      this.isAuthenticated(); 
-      this.router.navigate(['/task']);
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
+     return new Promise((res, err) => {
+       firebase.auth().signInWithEmailAndPassword(email, password)
+       .then (success => {
+         this.isAuthenticated.next(true);
+         res(success);
+       })
+       .catch (error => {
+        err(error);
+       });
+     });
   }
 
   logout() {
     firebase.auth().signOut()
-    this.router.navigate(['/']);
+    .then (success => {
+      this.isAuthenticated.next(false);
+      this.router.navigate(['/']);
+    })
+    .catch (error => {
+      console.log(error);
+    });
   }
 
-  isAuthenticated(): Observable<boolean> {
-    const subject = new Subject<boolean>();
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        subject.next(true);
-      } else {
-        subject.next(false);
-      }
-    });
-    return subject.asObservable();
-  }
+
 
 }

@@ -12,11 +12,11 @@
           <md-icon>build</md-icon>
           <span>Task Runner</span>
         </button>
-        <button md-menu-item *ngIf="!currentUser()" (click)="login()">
+        <button md-menu-item *ngIf="!currentUser" (click)="login()">
           <md-icon>thumb_up</md-icon>
           <span>Login</span>
         </button>
-        <button md-menu-item *ngIf="currentUser()" (click)="logout()">
+        <button md-menu-item *ngIf="currentUser" (click)="logout()">
           <md-icon>thumb_down</md-icon>
           <span>Logout</span>
         </button>
