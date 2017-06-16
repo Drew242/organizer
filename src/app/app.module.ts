@@ -12,10 +12,13 @@ import { MaterialModule } from '@angular/material';
 import { TaskComponent } from './task/task.component';
 import { TaskService } from './task/task.service';
 import { ErrorComponent } from './error/error.component';
+import { PTaskComponent } from './p-task/p-task.component';
+import { PTaskService } from './p-task/p-task.service';
 
 import { appRoutes } from './routes';
 import { LoginComponent } from './login/login.component';
-import { AuthService } from './auth.service';
+import { AuthService } from './shared/auth.service';
+import { AuthGuard } from './shared/auth.guard';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { AuthService } from './auth.service';
     HeaderComponent,
     TaskComponent,
     ErrorComponent,
-    LoginComponent
+    LoginComponent,
+    PTaskComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { AuthService } from './auth.service';
   ],
   providers: [
     TaskService,
-    AuthService
+    PTaskService,
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

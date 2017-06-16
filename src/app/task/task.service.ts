@@ -3,7 +3,7 @@ import { Headers, Http, Response } from '@angular/http';
 
 import "rxjs/Rx";
 
-import { Task } from "./task";
+import { Task } from "../shared/task";
 
 @Injectable()
 export class TaskService {

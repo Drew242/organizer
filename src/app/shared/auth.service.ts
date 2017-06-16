@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 
 import { Observable, Subject } from "rxjs/Rx";
 
-import { User } from "./user.interface";
+import { User } from "../user.interface";
 
 declare let firebase: any;
 

@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { MdSnackBar } from '@angular/material';
 
 import { User } from "../user.interface";
-import { AuthService } from "../auth.service";
+import { AuthService } from "../shared/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -30,7 +30,8 @@ export class LoginComponent {
       this.authService.signinUser(this.username, this.password)
       .then(success => {
         if (success) {
-          this.router.navigate(['/task']);
+          console.log('You should be heading to the protected route');
+          this.router.navigate(['/ptask']);
         }
       })
       .catch(error => {

@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 
 import { Subscription } from "rxjs/Rx";
 
-import { AuthService } from "../auth.service";
+import { AuthService } from "../shared/auth.service";
 
 @Component({
   selector: 'app-header',
